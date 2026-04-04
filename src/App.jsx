@@ -83,6 +83,28 @@ function App() {
     return () => window.clearInterval(timer);
   }, []);
 
+  useEffect(() => {
+    const revealElements = document.querySelectorAll('[data-reveal]');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.18,
+        rootMargin: '0px 0px -8% 0px',
+      },
+    );
+
+    revealElements.forEach((element) => observer.observe(element));
+
+    return () => observer.disconnect();
+  }, []);
+
   const countdownItems = [
     { label: 'Ngày', value: remainingTime.days },
     { label: 'Giờ', value: remainingTime.hours },
@@ -94,9 +116,12 @@ function App() {
     <main className="page-shell">
       <div className="ambient ambient-left" />
       <div className="ambient ambient-right" />
+      <div className="ornament ornament-one" />
+      <div className="ornament ornament-two" />
+      <div className="ornament ornament-three" />
 
       <section className="hero section">
-        <div className="hero-copy" data-reveal>
+        <div className="hero-copy" data-reveal style={{ '--reveal-delay': '0ms' }}>
           <p className="eyebrow">Wedding Invitation</p>
           <h1>
             Trần Hiền
@@ -142,7 +167,7 @@ function App() {
           </div>
         </div>
 
-        <div className="hero-visual" data-reveal>
+        <div className="hero-visual" data-reveal style={{ '--reveal-delay': '120ms' }}>
           <div className="photo-frame photo-frame-main">
             <img src="/hero.jpg" alt="Ảnh cưới của Trần Hiền và Anh Kiệt" />
           </div>
@@ -168,8 +193,13 @@ function App() {
       </section>
 
       <section className="details-grid section" aria-label="Thông tin ngày cưới">
-        {detailCards.map((card) => (
-          <article className="detail-card" key={card.label} data-reveal>
+        {detailCards.map((card, index) => (
+          <article
+            className="detail-card"
+            key={card.label}
+            data-reveal
+            style={{ '--reveal-delay': `${index * 90}ms` }}
+          >
             <p>{card.label}</p>
             <h2>{card.value}</h2>
             <span>{card.note}</span>
@@ -177,7 +207,7 @@ function App() {
         ))}
       </section>
 
-      <section className="event-info section" data-reveal>
+      <section className="event-info section" data-reveal style={{ '--reveal-delay': '40ms' }}>
         <div className="section-heading">
           <p className="eyebrow">Thông tin buổi tiệc</p>
           <h2>Trân trọng kính mời bạn đến chung vui cùng gia đình</h2>
@@ -198,7 +228,7 @@ function App() {
         </div>
       </section>
 
-      <section className="gallery section" data-reveal>
+      <section className="gallery section" data-reveal style={{ '--reveal-delay': '50ms' }}>
         <div className="section-heading">
           <p className="eyebrow">Khoảnh khắc</p>
           <h2>Những bức hình làm trang thiệp sống động hơn</h2>
@@ -209,6 +239,8 @@ function App() {
             <figure
               className={`gallery-card gallery-card-${index + 1}`}
               key={photo.src}
+              data-reveal
+              style={{ '--reveal-delay': `${index * 120}ms` }}
             >
               <img src={photo.src} alt={photo.alt} />
               <figcaption>{photo.caption}</figcaption>
@@ -217,15 +249,25 @@ function App() {
         </div>
       </section>
 
-      <section className="countdown section" id="countdown" data-reveal>
+      <section
+        className="countdown section"
+        id="countdown"
+        data-reveal
+        style={{ '--reveal-delay': '60ms' }}
+      >
         <div className="section-heading">
           <p className="eyebrow">Counting Down</p>
           <h2>Đếm ngược đến ngày về chung một nhà</h2>
         </div>
 
         <div className="countdown-grid" aria-live="polite">
-          {countdownItems.map((item) => (
-            <div className="countdown-card" key={item.label}>
+          {countdownItems.map((item, index) => (
+            <div
+              className="countdown-card"
+              key={item.label}
+              data-reveal
+              style={{ '--reveal-delay': `${index * 100}ms` }}
+            >
               <strong>{item.value}</strong>
               <span>{item.label}</span>
             </div>
@@ -239,7 +281,7 @@ function App() {
         </p>
       </section>
 
-      <section className="closing section" data-reveal>
+      <section className="closing section" data-reveal style={{ '--reveal-delay': '70ms' }}>
         <p className="eyebrow">Lời nhắn</p>
         <blockquote>
           “Sự hiện diện của bạn là món quà quý giá nhất trong ngày vui của chúng
