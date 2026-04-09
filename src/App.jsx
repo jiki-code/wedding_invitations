@@ -59,11 +59,6 @@ const highlights = [
 
 const galleryPhotos = [
   {
-    src: optimizedImage('A5_08671'),
-    alt: 'Cô dâu chú rể đứng giữa khu vườn hoa cưới',
-    caption: 'Ngày nắng ngọt',
-  },
-  {
     src: optimizedImage('A5_08425'),
     alt: 'Chân dung cô dâu với bó hoa cưới',
     caption: 'Nét dịu dàng',
@@ -77,31 +72,6 @@ const galleryPhotos = [
     src: optimizedImage('A5_09442'),
     alt: 'Cô dâu chú rể bên nhau trong studio',
     caption: 'Lời hẹn trăm năm',
-  },
-  {
-    src: optimizedImage('A5_09832'),
-    alt: 'Khoảnh khắc cô dâu chú rể hôn nhau dưới lớp voan',
-    caption: 'Nụ hôn đầu tiệc',
-  },
-  {
-    src: optimizedImage('A5_07456'),
-    alt: 'Tà váy cưới trải dài trong khu vườn',
-    caption: 'Dải voan mềm',
-  },
-];
-
-const memoryStripPhotos = [
-  {
-    src: optimizedImage('A5_09832'),
-    alt: 'Cô dâu chú rể dưới lớp voan trắng',
-  },
-  {
-    src: optimizedImage('A5_08480'),
-    alt: 'Cô dâu chú rể trong khung cảnh hoa trắng',
-  },
-  {
-    src: optimizedImage('A5_07456'),
-    alt: 'Hình ảnh tà váy cưới giữa khu vườn',
   },
 ];
 
@@ -212,7 +182,7 @@ function App() {
                 <div className="invitation-panel-inner">
                   <div className="invitation-panel-art">
                     <img
-                      src={optimizedImage('A5_08480')}
+                      src={optimizedImage('A5_08671')}
                       alt="Cô dâu chú rể trong khu vườn hoa"
                       loading="eager"
                       decoding="async"
@@ -228,8 +198,8 @@ function App() {
                 <div className="invitation-panel-inner">
                   <div className="invitation-panel-art">
                     <img
-                      src={optimizedImage('A5_08671')}
-                      alt="Tà váy cưới trải dài trong ánh chiều"
+                      src={optimizedImage('A5_07456')}
+                      alt="Tà váy cưới trải dài trong khu vườn"
                       loading="eager"
                       decoding="async"
                     />
@@ -323,24 +293,6 @@ function App() {
               fetchPriority="high"
             />
           </div>
-          <div className="hero-stack" aria-label="Bộ ảnh cưới nổi bật">
-            <div className="photo-frame photo-frame-small photo-frame-left">
-              <img
-                src={optimizedImage('A5_09442')}
-                alt="Cô dâu và chú rể nhìn nhau trong studio"
-                loading="eager"
-                decoding="async"
-              />
-            </div>
-            <div className="photo-frame photo-frame-small photo-frame-right">
-              <img
-                src={optimizedImage('A5_08425')}
-                alt="Chân dung cô dâu trong ánh nắng"
-                loading="eager"
-                decoding="async"
-              />
-            </div>
-          </div>
           <div className="floating-card">
             <span>Save the Date</span>
             <strong>16.09.2026</strong>
@@ -381,26 +333,6 @@ function App() {
             <h3>Diamond Place 101 Đ. Lý Chiêu Hoàng</h3>
             <span>Phường 10, Bình Phú, Hồ Chí Minh</span>
           </article>
-        </div>
-      </section>
-
-      <section className="memory-strip section" data-reveal style={{ '--reveal-delay': '45ms' }}>
-        <div className="section-heading">
-          <p className="eyebrow">Khung ảnh</p>
-          <h2>Thêm nhiều khoảnh khắc hơn từ bộ ảnh gốc</h2>
-        </div>
-
-        <div className="memory-strip-grid">
-          {memoryStripPhotos.map((photo, index) => (
-            <figure
-              className={`memory-card memory-card-${index + 1}`}
-              key={photo.src}
-              data-reveal
-              style={{ '--reveal-delay': `${index * 120}ms` }}
-            >
-              <img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" />
-            </figure>
-          ))}
         </div>
       </section>
 
