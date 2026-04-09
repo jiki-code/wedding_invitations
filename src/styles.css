@@ -88,6 +88,70 @@ a {
   perspective: 2200px;
 }
 
+.heart-cluster {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.heart {
+  position: absolute;
+  width: 24px;
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, rgba(211, 114, 135, 0.92), rgba(236, 192, 197, 0.95));
+  transform: rotate(45deg);
+  border-radius: 4px;
+  opacity: 0.58;
+  filter: drop-shadow(0 6px 12px rgba(183, 112, 126, 0.18));
+  animation: heart-float 8s ease-in-out infinite;
+}
+
+.heart::before,
+.heart::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: 50%;
+}
+
+.heart::before {
+  left: -50%;
+}
+
+.heart::after {
+  top: -50%;
+}
+
+.heart-cluster-cover {
+  z-index: 2;
+}
+
+.heart-cover-1 {
+  top: 16%;
+  left: 14%;
+  animation-duration: 7.2s;
+}
+
+.heart-cover-2 {
+  right: 17%;
+  top: 22%;
+  width: 20px;
+  opacity: 0.45;
+  animation-duration: 8.4s;
+  animation-delay: -2s;
+}
+
+.heart-cover-3 {
+  bottom: 18%;
+  right: 24%;
+  width: 22px;
+  animation-duration: 9.5s;
+  animation-delay: -4s;
+}
+
 .invitation-center {
   position: absolute;
   inset: 0;
@@ -331,6 +395,42 @@ a {
   background: radial-gradient(circle, rgba(195, 160, 135, 0.9), rgba(195, 160, 135, 0.14));
 }
 
+.heart-cluster-page {
+  z-index: 0;
+}
+
+.heart-page-1 {
+  left: 4%;
+  top: 22rem;
+  width: 22px;
+  animation-duration: 10s;
+}
+
+.heart-page-2 {
+  right: 6%;
+  top: 42rem;
+  width: 20px;
+  animation-duration: 12s;
+  animation-delay: -3s;
+}
+
+.heart-page-3 {
+  left: 10%;
+  bottom: 24rem;
+  width: 18px;
+  opacity: 0.42;
+  animation-duration: 11s;
+  animation-delay: -6s;
+}
+
+.heart-page-4 {
+  right: 14%;
+  bottom: 9rem;
+  width: 18px;
+  animation-duration: 9s;
+  animation-delay: -1s;
+}
+
 .section {
   position: relative;
   z-index: 1;
@@ -369,6 +469,13 @@ a {
   font-size: 0.85rem;
   letter-spacing: 0.24em;
   text-transform: uppercase;
+}
+
+.eyebrow::after {
+  content: '♡';
+  font-size: 0.9em;
+  color: rgba(184, 122, 136, 0.88);
+  animation: sparkle-heart 3.6s ease-in-out infinite;
 }
 
 .hero-copy h1,
@@ -649,12 +756,22 @@ a {
   flex-direction: column;
   gap: 8px;
   margin-bottom: 28px;
+  position: relative;
 }
 
 .section-heading h2 {
   margin: 0;
   font-size: clamp(2.2rem, 4vw, 3.4rem);
   line-height: 0.98;
+}
+
+.section-heading::after {
+  content: '';
+  width: 76px;
+  height: 1px;
+  margin-top: 2px;
+  background: linear-gradient(90deg, rgba(202, 152, 132, 0), rgba(202, 152, 132, 0.86), rgba(202, 152, 132, 0));
+  animation: line-glow 4.8s ease-in-out infinite;
 }
 
 .story-layout {
@@ -933,12 +1050,30 @@ a {
   text-align: center;
 }
 
+.closing-heartline {
+  display: inline-flex;
+  gap: 18px;
+  margin-bottom: 10px;
+}
+
+.heart-inline {
+  position: relative;
+  width: 18px;
+  opacity: 0.72;
+  animation-duration: 3.2s;
+}
+
+.heart-inline-delay {
+  animation-delay: -1.6s;
+}
+
 .closing blockquote {
   max-width: 16ch;
   margin: 0 auto 20px;
   font-size: clamp(2.2rem, 5vw, 3.5rem);
   line-height: 1;
   color: #7c5a41;
+  animation: quote-sway 6.4s ease-in-out infinite;
 }
 
 @keyframes rise-in {
@@ -983,6 +1118,21 @@ a {
 
   50% {
     transform: translateY(-14px) scale(1.08);
+  }
+}
+
+@keyframes heart-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(45deg) scale(1);
+  }
+
+  35% {
+    transform: translateY(-10px) rotate(45deg) scale(1.08);
+  }
+
+  65% {
+    transform: translateY(-4px) rotate(45deg) scale(0.96);
   }
 }
 
@@ -1048,6 +1198,43 @@ a {
 
   50% {
     opacity: 1;
+  }
+}
+
+@keyframes sparkle-heart {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes line-glow {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scaleX(0.9);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scaleX(1.02);
+  }
+}
+
+@keyframes quote-sway {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
   }
 }
 
@@ -1133,6 +1320,13 @@ a {
     margin-top: 0;
     transform: none;
     grid-column: auto;
+  }
+
+  .heart-page-1,
+  .heart-page-2,
+  .heart-page-3,
+  .heart-page-4 {
+    display: none;
   }
 }
 
@@ -1220,6 +1414,12 @@ a {
 
   .countdown-card strong {
     font-size: 2.8rem;
+  }
+
+  .heart-cover-1,
+  .heart-cover-2,
+  .heart-cover-3 {
+    width: 18px;
   }
 }
 

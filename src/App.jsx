@@ -188,6 +188,11 @@ function App() {
         <div className={`invitation-overlay invitation-overlay--${coverState}`}>
           <div className="invitation-stage">
             <div className={`invitation-book invitation-book--${coverState}`}>
+              <div className="heart-cluster heart-cluster-cover" aria-hidden="true">
+                <span className="heart heart-cover-1" />
+                <span className="heart heart-cover-2" />
+                <span className="heart heart-cover-3" />
+              </div>
               <div className="invitation-center">
                 <div className="invitation-center-photo">
                   <img
@@ -254,6 +259,12 @@ function App() {
       <div className="ornament ornament-one" />
       <div className="ornament ornament-two" />
       <div className="ornament ornament-three" />
+      <div className="heart-cluster heart-cluster-page" aria-hidden="true">
+        <span className="heart heart-page-1" />
+        <span className="heart heart-page-2" />
+        <span className="heart heart-page-3" />
+        <span className="heart heart-page-4" />
+      </div>
 
       <section className="hero section">
         <div className="hero-copy" data-reveal style={{ '--reveal-delay': '0ms' }}>
@@ -283,7 +294,7 @@ function App() {
             </div>
             <div>
               <span>Địa chỉ</span>
-              <strong>101 Đ. Lý Chiêu Hoàng</strong>
+              <strong>101 Đ. Lý Chiêu Hoàng, Bình Phú, Hồ Chí Minh</strong>
             </div>
           </div>
 
@@ -367,7 +378,7 @@ function App() {
 
           <article className="event-panel">
             <p>Địa chỉ</p>
-            <h3>101 Đ. Lý Chiêu Hoàng</h3>
+            <h3>Diamond Place 101 Đ. Lý Chiêu Hoàng</h3>
             <span>Phường 10, Bình Phú, Hồ Chí Minh</span>
           </article>
         </div>
@@ -447,6 +458,10 @@ function App() {
       </section>
 
       <section className="closing section" data-reveal style={{ '--reveal-delay': '70ms' }}>
+        <div className="closing-heartline" aria-hidden="true">
+          <span className="heart heart-inline" />
+          <span className="heart heart-inline heart-inline-delay" />
+        </div>
         <p className="eyebrow">Lời nhắn</p>
         <blockquote>
           “Sự hiện diện của bạn là món quà quý giá nhất trong ngày vui của chúng
