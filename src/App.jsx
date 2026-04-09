@@ -1,6 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { createMusicController } from './utils/music';
 
 const weddingDate = new Date('2026-09-16T00:00:00+07:00');
+const optimizedImage = (name) => `/optimized/${name}.jpg`;
+const musicSrc = '/music/music.mp3';
 
 function getRemainingTime() {
   const now = new Date();
@@ -43,7 +46,7 @@ const detailCards = [
   },
   {
     label: 'Địa điểm',
-    value: 'Phường 10',
+    value: 'Diamond Place',
     note: '101 Đ. Lý Chiêu Hoàng, Bình Phú, Hồ Chí Minh',
   },
 ];
@@ -56,24 +59,63 @@ const highlights = [
 
 const galleryPhotos = [
   {
-    src: '/A5_08425.JPG',
+    src: optimizedImage('A5_08671'),
+    alt: 'Cô dâu chú rể đứng giữa khu vườn hoa cưới',
+    caption: 'Ngày nắng ngọt',
+  },
+  {
+    src: optimizedImage('A5_08425'),
     alt: 'Chân dung cô dâu với bó hoa cưới',
     caption: 'Nét dịu dàng',
   },
   {
-    src: '/A5_09376.JPG',
+    src: optimizedImage('A5_09376'),
     alt: 'Cô dâu và chú rể đứng cạnh nhau trong khung cửa',
     caption: 'Khoảnh khắc riêng',
   },
   {
-    src: '/A5_09442.JPG',
+    src: optimizedImage('A5_09442'),
     alt: 'Cô dâu chú rể bên nhau trong studio',
     caption: 'Lời hẹn trăm năm',
+  },
+  {
+    src: optimizedImage('A5_09832'),
+    alt: 'Khoảnh khắc cô dâu chú rể hôn nhau dưới lớp voan',
+    caption: 'Nụ hôn đầu tiệc',
+  },
+  {
+    src: optimizedImage('A5_07456'),
+    alt: 'Tà váy cưới trải dài trong khu vườn',
+    caption: 'Dải voan mềm',
+  },
+];
+
+const memoryStripPhotos = [
+  {
+    src: optimizedImage('A5_09832'),
+    alt: 'Cô dâu chú rể dưới lớp voan trắng',
+  },
+  {
+    src: optimizedImage('A5_08480'),
+    alt: 'Cô dâu chú rể trong khung cảnh hoa trắng',
+  },
+  {
+    src: optimizedImage('A5_07456'),
+    alt: 'Hình ảnh tà váy cưới giữa khu vườn',
   },
 ];
 
 function App() {
+  const [coverState, setCoverState] = useState('closed');
   const [remainingTime, setRemainingTime] = useState(getRemainingTime);
+  const openTimerRef = useRef(null);
+  const musicControllerRef = useRef(
+    createMusicController({
+      src: musicSrc,
+      volume: 0.32,
+      loop: true,
+    }),
+  );
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -82,6 +124,14 @@ function App() {
 
     return () => window.clearInterval(timer);
   }, []);
+
+  useEffect(() => {
+    document.body.classList.toggle('invitation-locked', coverState !== 'opened');
+
+    return () => {
+      document.body.classList.remove('invitation-locked');
+    };
+  }, [coverState]);
 
   useEffect(() => {
     const revealElements = document.querySelectorAll('[data-reveal]');
@@ -105,6 +155,26 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(
+    () => () => {
+      window.clearTimeout(openTimerRef.current);
+      musicControllerRef.current.destroy();
+    },
+    [],
+  );
+
+  function handleOpenInvitation() {
+    if (coverState !== 'closed') {
+      return;
+    }
+
+    void musicControllerRef.current.play();
+    setCoverState('opening');
+    openTimerRef.current = window.setTimeout(() => {
+      setCoverState('opened');
+    }, 1450);
+  }
+
   const countdownItems = [
     { label: 'Ngày', value: remainingTime.days },
     { label: 'Giờ', value: remainingTime.hours },
@@ -113,7 +183,72 @@ function App() {
   ];
 
   return (
-    <main className="page-shell">
+    <>
+      {coverState !== 'opened' && (
+        <div className={`invitation-overlay invitation-overlay--${coverState}`}>
+          <div className="invitation-stage">
+            <div className={`invitation-book invitation-book--${coverState}`}>
+              <div className="invitation-center">
+                <div className="invitation-center-photo">
+                  <img
+                    src={optimizedImage('A5_09832')}
+                    alt="Khoảnh khắc cô dâu chú rể dưới lớp voan"
+                    loading="eager"
+                    decoding="async"
+                    fetchPriority="high"
+                  />
+                </div>
+                <p className="eyebrow">Thiệp cưới online</p>
+                <h2>Trần Hiền & Anh Kiệt</h2>
+                <span>16/09/2026 • 11:00 sáng</span>
+              </div>
+
+              <div className="invitation-panel invitation-panel-left">
+                <div className="invitation-panel-inner">
+                  <div className="invitation-panel-art">
+                    <img
+                      src={optimizedImage('A5_08480')}
+                      alt="Cô dâu chú rể trong khu vườn hoa"
+                      loading="eager"
+                      decoding="async"
+                    />
+                  </div>
+                  <p className="eyebrow">Save the Date</p>
+                  <h2>Trần Hiền</h2>
+                  <span>Trân trọng báo tin vui</span>
+                </div>
+              </div>
+
+              <div className="invitation-panel invitation-panel-right">
+                <div className="invitation-panel-inner">
+                  <div className="invitation-panel-art">
+                    <img
+                      src={optimizedImage('A5_08671')}
+                      alt="Tà váy cưới trải dài trong ánh chiều"
+                      loading="eager"
+                      decoding="async"
+                    />
+                  </div>
+                  <p className="eyebrow">Wedding Day</p>
+                  <h2>Anh Kiệt</h2>
+                  <span>16/09/2026 • 06/08 Âm lịch</span>
+                </div>
+              </div>
+            </div>
+
+            <button
+              className="invitation-open-button"
+              type="button"
+              onClick={handleOpenInvitation}
+              disabled={coverState !== 'closed'}
+            >
+              {coverState === 'opening' ? 'Đang mở thiệp...' : 'Mở thiệp'}
+            </button>
+          </div>
+        </div>
+      )}
+
+      <main className={`page-shell ${coverState === 'opened' ? 'page-shell--ready' : ''}`}>
       <div className="ambient ambient-left" />
       <div className="ambient ambient-right" />
       <div className="ornament ornament-one" />
@@ -169,19 +304,29 @@ function App() {
 
         <div className="hero-visual" data-reveal style={{ '--reveal-delay': '120ms' }}>
           <div className="photo-frame photo-frame-main">
-            <img src="/hero.jpg" alt="Ảnh cưới của Trần Hiền và Anh Kiệt" />
+            <img
+              src={optimizedImage('A5_08480')}
+              alt="Ảnh cưới của Trần Hiền và Anh Kiệt"
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
+            />
           </div>
           <div className="hero-stack" aria-label="Bộ ảnh cưới nổi bật">
             <div className="photo-frame photo-frame-small photo-frame-left">
               <img
-                src="/A5_09442.JPG"
+                src={optimizedImage('A5_09442')}
                 alt="Cô dâu và chú rể nhìn nhau trong studio"
+                loading="eager"
+                decoding="async"
               />
             </div>
             <div className="photo-frame photo-frame-small photo-frame-right">
               <img
-                src="/A5_08425.JPG"
+                src={optimizedImage('A5_08425')}
                 alt="Chân dung cô dâu trong ánh nắng"
+                loading="eager"
+                decoding="async"
               />
             </div>
           </div>
@@ -228,6 +373,26 @@ function App() {
         </div>
       </section>
 
+      <section className="memory-strip section" data-reveal style={{ '--reveal-delay': '45ms' }}>
+        <div className="section-heading">
+          <p className="eyebrow">Khung ảnh</p>
+          <h2>Thêm nhiều khoảnh khắc hơn từ bộ ảnh gốc</h2>
+        </div>
+
+        <div className="memory-strip-grid">
+          {memoryStripPhotos.map((photo, index) => (
+            <figure
+              className={`memory-card memory-card-${index + 1}`}
+              key={photo.src}
+              data-reveal
+              style={{ '--reveal-delay': `${index * 120}ms` }}
+            >
+              <img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" />
+            </figure>
+          ))}
+        </div>
+      </section>
+
       <section className="gallery section" data-reveal style={{ '--reveal-delay': '50ms' }}>
         <div className="section-heading">
           <p className="eyebrow">Khoảnh khắc</p>
@@ -242,7 +407,7 @@ function App() {
               data-reveal
               style={{ '--reveal-delay': `${index * 120}ms` }}
             >
-              <img src={photo.src} alt={photo.alt} />
+              <img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" />
               <figcaption>{photo.caption}</figcaption>
             </figure>
           ))}
@@ -292,7 +457,8 @@ function App() {
           Chiêu Hoàng, Phường 10, Bình Phú, Hồ Chí Minh.
         </p>
       </section>
-    </main>
+      </main>
+    </>
   );
 }
 
