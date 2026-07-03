@@ -5,3 +5,4 @@ export default defineConfig({
   base: '/wedding_invitations/',
   plugins: [react()],
 });
+

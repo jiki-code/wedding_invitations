@@ -2,8 +2,9 @@ import { useEffect, useRef, useState } from 'react';
 import { createMusicController } from './utils/music';
 
 const weddingDate = new Date('2026-09-16T00:00:00+07:00');
-const optimizedImage = (name) => `/optimized/${name}.jpg`;
-const musicSrc = '/music/music.mp3';
+const assetBase = import.meta.env.BASE_URL;
+const optimizedImage = (name) => `${assetBase}optimized/${name}.jpg`;
+const musicSrc = `${assetBase}music/music.mp3`;
 
 function getRemainingTime() {
   const now = new Date();
