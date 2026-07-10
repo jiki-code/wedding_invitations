@@ -96,8 +96,7 @@ const fireworks = [
 const weddingSchedule = [
   {
     title: 'Hôn Lễ Tại Tư Gia',
-    time: '9h sáng ngày 16/09/2026',
-    note: 'Nhằm 06/08 Âm lịch',
+    time: '9h ngày 16/09/2026',
     place: 'Tại tư gia',
     address: '45B/2 Xã Bình Chánh, Thành phố Hồ Chí Minh',
   },
