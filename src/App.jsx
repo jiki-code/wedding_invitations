@@ -3,7 +3,7 @@ import { createMusicController } from './utils/music';
 
 const weddingDate = new Date('2026-09-16T00:00:00+07:00');
 const assetBase = import.meta.env.BASE_URL;
-const optimizedImage = (name) => `${assetBase}optimized/${name}.jpg`;
+const optimizedImage = (name) => `${assetBase}optimized/${name}`;
 const musicSrc = `${assetBase}music/music.mp3`;
 
 function getRemainingTime() {
@@ -42,7 +42,7 @@ const detailCards = [
   },
   {
     label: 'Giờ đãi tiệc',
-    value: '11g45',
+    value: '11h30',
     note: 'Đón khách 11g',
   },
   {
@@ -60,19 +60,53 @@ const highlights = [
 
 const galleryPhotos = [
   {
-    src: optimizedImage('A5_08425'),
-    alt: 'Chân dung cô dâu với bó hoa cưới',
-    caption: 'Nét dịu dàng',
+    src: optimizedImage('A5_09426.jpg'),
+    alt: 'Cô dâu chú rể mỉm cười trong khung hình save the date',
+    caption: 'Save the date',
   },
   {
-    src: optimizedImage('A5_09376'),
-    alt: 'Cô dâu và chú rể đứng cạnh nhau trong khung cửa',
-    caption: 'Khoảnh khắc riêng',
+    src: optimizedImage('A5_08480.jpg'),
+    alt: 'Cô dâu chú rể nắm tay và ngoái nhìn máy ảnh',
+    caption: 'Ánh nhìn hạnh phúc',
   },
   {
-    src: optimizedImage('A5_09442'),
-    alt: 'Cô dâu chú rể bên nhau trong studio',
-    caption: 'Lời hẹn trăm năm',
+    src: optimizedImage('A5_09234.jpg'),
+    alt: 'Cô dâu chú rể giữa cánh hoa rơi',
+    caption: 'Khoảnh khắc ngọt ngào',
+  },
+];
+
+const floatingHearts = Array.from({ length: 12 }, (_, index) => ({
+  id: index,
+  left: `${6 + ((index * 8) % 84)}%`,
+  delay: `${(index % 6) * -1.1}s`,
+  duration: `${11 + (index % 5) * 1.4}s`,
+  size: `${14 + (index % 4) * 6}px`,
+}));
+
+const fireworks = [
+  { id: 'fw-1', top: '10%', left: '8%', delay: '0s', duration: '4.8s' },
+  { id: 'fw-2', top: '16%', right: '10%', delay: '-1.4s', duration: '5.2s' },
+  { id: 'fw-3', top: '42%', left: '3%', delay: '-2.1s', duration: '5.6s' },
+  { id: 'fw-4', top: '56%', right: '6%', delay: '-3s', duration: '4.9s' },
+  { id: 'fw-5', top: '76%', left: '14%', delay: '-1.8s', duration: '5.4s' },
+  { id: 'fw-6', top: '84%', right: '16%', delay: '-2.7s', duration: '5.1s' },
+];
+
+const weddingSchedule = [
+  {
+    title: 'Hôn Lễ Tại Tư Gia',
+    time: '9h sáng ngày 16/09/2026',
+    note: 'Nhằm 06/08 Âm lịch',
+    place: 'Tại tư gia',
+    address: '45B/2 Xã Bình Chánh, Thành phố Hồ Chí Minh',
+  },
+  {
+    title: 'Tiệc Cưới',
+    time: 'Đãi tiệc lúc 11h30 ngày 16/09/2026',
+    note: 'Đón khách 11g',
+    place: 'Nhà hàng Diamond Place',
+    address: '101 Đ. Lý Chiêu Hoàng, Bình Phú, Hồ Chí Minh',
   },
 ];
 
@@ -167,7 +201,7 @@ function App() {
               <div className="invitation-center">
                 <div className="invitation-center-photo">
                   <img
-                    src={optimizedImage('A5_09832')}
+                    src={optimizedImage('cover-center.jpeg')}
                     alt="Khoảnh khắc cô dâu chú rể dưới lớp voan"
                     loading="eager"
                     decoding="async"
@@ -176,14 +210,14 @@ function App() {
                 </div>
                 <p className="eyebrow">Thiệp cưới online</p>
                 <h2>Trần Hiền & Anh Kiệt</h2>
-                <span>16/09/2026 • Đón khách 11g • Mở tiệc 11g45</span>
+                <span>16/09/2026 • Đón khách 11g • Đãi tiệc 11h30</span>
               </div>
 
               <div className="invitation-panel invitation-panel-left">
                 <div className="invitation-panel-inner">
                   <div className="invitation-panel-art">
                     <img
-                      src={optimizedImage('A5_08671')}
+                      src={optimizedImage('cover-left.jpeg')}
                       alt="Cô dâu chú rể trong khu vườn hoa"
                       loading="eager"
                       decoding="async"
@@ -199,7 +233,7 @@ function App() {
                 <div className="invitation-panel-inner">
                   <div className="invitation-panel-art">
                     <img
-                      src={optimizedImage('A5_07456')}
+                      src={optimizedImage('cover-right.jpeg')}
                       alt="Tà váy cưới trải dài trong khu vườn"
                       loading="eager"
                       decoding="async"
@@ -225,6 +259,35 @@ function App() {
       )}
 
       <main className={`page-shell ${coverState === 'opened' ? 'page-shell--ready' : ''}`}>
+      <div className="fireworks-layer" aria-hidden="true">
+        {fireworks.map((firework) => (
+          <span
+            key={firework.id}
+            className="firework"
+            style={{
+              top: firework.top,
+              left: firework.left,
+              right: firework.right,
+              '--firework-delay': firework.delay,
+              '--firework-duration': firework.duration,
+            }}
+          />
+        ))}
+      </div>
+      <div className="floating-hearts-layer" aria-hidden="true">
+        {floatingHearts.map((heart) => (
+          <span
+            key={heart.id}
+            className="floating-heart"
+            style={{
+              left: heart.left,
+              '--heart-size': heart.size,
+              '--heart-delay': heart.delay,
+              '--heart-duration': heart.duration,
+            }}
+          />
+        ))}
+      </div>
       <div className="ambient ambient-left" />
       <div className="ambient ambient-right" />
       <div className="ornament ornament-one" />
@@ -257,7 +320,7 @@ function App() {
             </div>
             <div>
               <span>Giờ đãi tiệc</span>
-              <strong>11g45</strong>
+              <strong>11h30</strong>
             </div>
             <div>
               <span>Âm lịch</span>
@@ -287,7 +350,7 @@ function App() {
         <div className="hero-visual" data-reveal style={{ '--reveal-delay': '120ms' }}>
           <div className="photo-frame photo-frame-main">
             <img
-              src={optimizedImage('A5_08480')}
+              src={optimizedImage('A5_08702.jpg')}
               alt="Ảnh cưới của Trần Hiền và Anh Kiệt"
               loading="eager"
               decoding="async"
@@ -325,7 +388,7 @@ function App() {
         <div className="event-info-grid">
           <article className="event-panel">
             <p>Thời gian</p>
-            <h3>ĐãiĐãi tiệc 11g45 ngày 16/09/2026</h3>
+            <h3>Đãi tiệc lúc 11h30 ngày 16/09/2026</h3>
             <span>Đón khách 11g • Nhằm 06/08 Âm lịch</span>
           </article>
 
@@ -337,10 +400,61 @@ function App() {
         </div>
       </section>
 
+      <section
+        className="wedding-schedule section"
+        data-reveal
+        style={{ '--reveal-delay': '45ms' }}
+      >
+        <div className="section-heading">
+          <p className="eyebrow">Thông tin lễ cưới</p>
+          <h2>Những cột mốc quan trọng trong ngày vui của chúng mình</h2>
+        </div>
+
+        <div className="wedding-schedule-grid">
+          {weddingSchedule.map((item, index) => (
+            <article
+              className="schedule-card"
+              key={item.title}
+              data-reveal
+              style={{ '--reveal-delay': `${index * 110}ms` }}
+            >
+              <h3>{item.title}</h3>
+              <div className="schedule-block">
+                <p>Thời gian</p>
+                <strong>{item.time}</strong>
+                <span>{item.note}</span>
+              </div>
+              <div className="schedule-block">
+                <p>Địa điểm</p>
+                <strong>{item.place}</strong>
+                <span>{item.address}</span>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="gallery section" data-reveal style={{ '--reveal-delay': '50ms' }}>
         <div className="section-heading">
           <p className="eyebrow">Khoảnh khắc</p>
-          <h2>Những bức hình làm trang thiệp sống động hơn</h2>
+          <h2>Công chuyện nên duyên của chúng tôi</h2>
+        </div>
+
+        <div className="gallery-story" data-reveal style={{ '--reveal-delay': '70ms' }}>
+          <p>
+            Mọi thứ bắt đầu lúc cả 2 còn là học sinh cấp 3, chú rễ đã say đắm cô
+            dâu từ khoảng thời gian ấy, sau hơn 12 năm cả 2 vô tình tìm thấy nhau
+            và 1 lần nữa, đó là nơi tình yêu bắt đầu.
+          </p>
+          <p>
+            Hành trình gần 2 năm qua là những tháng ngày cùng nhau trưởng thành,
+            chia sẻ niềm vui và vượt qua thử thách. Tình yêu của chúng tôi không
+            hào nhoáng, mà lặng lẽ, sâu sắc và bền chặt như những trang sách cũ kỹ
+            nhưng vô giá.
+          </p>
+          <p className="gallery-story-signature">
+            “Cảm ơn vì đã luôn ở bên nhau.” — Anh Kiệt & Trần Hiền
+          </p>
         </div>
 
         <div className="gallery-grid">
@@ -401,7 +515,7 @@ function App() {
           mình.”
         </blockquote>
         <p>
-          Hân hạnh được đón tiếp bạn từ 11g, đón tiệc lúc 11g45 ngày 16/09/2026
+          Hân hạnh được đón tiếp bạn từ 11g, đãi tiệc lúc 11h30 ngày 16/09/2026
           tại 101 Đ. Lý Chiêu Hoàng, Phường 10, Bình Phú, Hồ Chí Minh.
         </p>
       </section>
