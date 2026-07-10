@@ -41,9 +41,9 @@ const detailCards = [
     note: 'Thứ Tư',
   },
   {
-    label: 'Giờ mời',
-    value: '11:00 sáng',
-    note: '16/09/2026',
+    label: 'Giờ đãi tiệc',
+    value: '11g45',
+    note: 'Đón khách 11g',
   },
   {
     label: 'Địa điểm',
@@ -176,7 +176,7 @@ function App() {
                 </div>
                 <p className="eyebrow">Thiệp cưới online</p>
                 <h2>Trần Hiền & Anh Kiệt</h2>
-                <span>16/09/2026 • 11:00 sáng</span>
+                <span>16/09/2026 • Đón khách 11g • Mở tiệc 11g45</span>
               </div>
 
               <div className="invitation-panel invitation-panel-left">
@@ -256,8 +256,8 @@ function App() {
               <strong>16 tháng 09, 2026</strong>
             </div>
             <div>
-              <span>Giờ mời</span>
-              <strong>11:00 sáng</strong>
+              <span>Giờ đãi tiệc</span>
+              <strong>11g45</strong>
             </div>
             <div>
               <span>Âm lịch</span>
@@ -325,8 +325,8 @@ function App() {
         <div className="event-info-grid">
           <article className="event-panel">
             <p>Thời gian</p>
-            <h3>11h sáng ngày 16/09/2026</h3>
-            <span>Nhằm 06/08 Âm lịch</span>
+            <h3>ĐãiĐãi tiệc 11g45 ngày 16/09/2026</h3>
+            <span>Đón khách 11g • Nhằm 06/08 Âm lịch</span>
           </article>
 
           <article className="event-panel">
@@ -401,8 +401,8 @@ function App() {
           mình.”
         </blockquote>
         <p>
-          Hân hạnh được đón tiếp bạn lúc 11h sáng ngày 16/09/2026 tại 101 Đ. Lý
-          Chiêu Hoàng, Phường 10, Bình Phú, Hồ Chí Minh.
+          Hân hạnh được đón tiếp bạn từ 11g, đón tiệc lúc 11g45 ngày 16/09/2026
+          tại 101 Đ. Lý Chiêu Hoàng, Phường 10, Bình Phú, Hồ Chí Minh.
         </p>
       </section>
       </main>
