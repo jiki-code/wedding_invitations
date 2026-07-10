@@ -4,7 +4,7 @@ import { createMusicController } from './utils/music';
 const weddingDate = new Date('2026-09-16T00:00:00+07:00');
 const assetBase = import.meta.env.BASE_URL;
 const optimizedImage = (name) => `${assetBase}optimized/${name}`;
-const musicSrc = `${assetBase}music/music.mp3`;
+const musicSrc = `${assetBase}music/le-duong.mp3`;
 
 function getRemainingTime() {
   const now = new Date();
