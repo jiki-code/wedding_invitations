@@ -443,7 +443,7 @@ function App() {
           <p>
             Mọi thứ bắt đầu lúc cả 2 còn thời cắp sách đến trường, chúng tôi học cùng trường với nhau, chú rể đã say nắng cô
             dâu từ khoảng thời gian ấy, sau hơn 12 năm cả 2 vô tình tìm thấy nhau
-            và 1 lần nữa nơi, đó là nơi tình yêu bắt đầu. Khi cả 2 đã trưởng thành, mọi thứ đã thay đổi nhiều kể từ lần rung động trước đó, thì 2 con người ấy giờ đã trưởng thành đến với nhau, chứ không còn là mối tình thời học trò. 
+            và 1 lần nữa, từ đó là nơi tình yêu bắt đầu. Khi cả 2 đã trưởng thành, mọi thứ đã thay đổi nhiều kể từ lần rung động trước đó, thì 2 con người ấy giờ đã trưởng thành đến với nhau, chứ không còn là mối tình thời học trò. 
           </p>
           <p>
             Hành trình gần 2 năm qua là những tháng ngày cùng nhau trưởng thành,
