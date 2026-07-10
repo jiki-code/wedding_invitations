@@ -43,7 +43,7 @@ const detailCards = [
   {
     label: 'Giờ đãi tiệc',
     value: '11h30',
-    note: 'Đón khách 11g',
+    note: 'Đón khách 11h',
   },
   {
     label: 'Địa điểm',
@@ -103,7 +103,7 @@ const weddingSchedule = [
   {
     title: 'Tiệc Cưới',
     time: 'Đãi tiệc lúc 11h30 ngày 16/09/2026',
-    note: 'Đón khách 11g',
+    note: 'Đón khách 11h',
     place: 'Nhà hàng Diamond Place',
     address: '101 Đ. Lý Chiêu Hoàng, Bình Phú, Hồ Chí Minh',
   },
@@ -208,8 +208,8 @@ function App() {
                   />
                 </div>
                 <p className="eyebrow">Thiệp cưới online</p>
-                <h2>Trần Hiền & Anh Kiệt</h2>
-                <span>16/09/2026 • Đón khách 11g • Đãi tiệc 11h30</span>
+                <h2>Anh Kiệt & Trần Hiền</h2>
+                <span>16/09/2026 • Đón khách 11h • Đãi tiệc 11h30</span>
               </div>
 
               <div className="invitation-panel invitation-panel-left">
@@ -223,7 +223,7 @@ function App() {
                     />
                   </div>
                   <p className="eyebrow">Save the Date</p>
-                  <h2>Trần Hiền</h2>
+                  <h2>Anh Kiệt</h2>
                   <span>Trân trọng báo tin vui</span>
                 </div>
               </div>
@@ -239,7 +239,7 @@ function App() {
                     />
                   </div>
                   <p className="eyebrow">Wedding Day</p>
-                  <h2>Anh Kiệt</h2>
+                  <h2>Trần Hiền</h2>
                   <span>16/09/2026 • 06/08 Âm lịch</span>
                 </div>
               </div>
@@ -303,9 +303,9 @@ function App() {
         <div className="hero-copy" data-reveal style={{ '--reveal-delay': '0ms' }}>
           <p className="eyebrow">Wedding Invitation</p>
           <h1>
-            Trần Hiền
-            <span>&</span>
             Anh Kiệt
+            <span>&</span>
+            Trần Hiền
           </h1>
           <p className="hero-text">
             Chúng mình trân trọng mời bạn cùng lưu lại ngày vui và đồng hành trong
@@ -388,7 +388,7 @@ function App() {
           <article className="event-panel">
             <p>Thời gian</p>
             <h3>Đãi tiệc lúc 11h30 ngày 16/09/2026</h3>
-            <span>Đón khách 11g • Nhằm 06/08 Âm lịch</span>
+            <span>Đón khách 11h • Nhằm 06/08 Âm lịch</span>
           </article>
 
           <article className="event-panel">
@@ -443,7 +443,7 @@ function App() {
           <p>
             Mọi thứ bắt đầu lúc cả 2 còn là học sinh cấp 3, chú rễ đã say đắm cô
             dâu từ khoảng thời gian ấy, sau hơn 12 năm cả 2 vô tình tìm thấy nhau
-            và 1 lần nữa, đó là nơi tình yêu bắt đầu. Khi cả 2 đã trưởng thành, mọi thứ đã thay đổi nhiều kể từ lần run động trước đó, 2 con người trưởng thành hơn đến với nhau. 
+            và 1 lần nữa, đó là nơi tình yêu bắt đầu. Khi cả 2 đã trưởng thành, mọi thứ đã thay đổi nhiều kể từ lần rung động trước đó, 2 con người trưởng thành hơn đến với nhau. 
           </p>
           <p>
             Hành trình gần 2 năm qua là những tháng ngày cùng nhau trưởng thành,
@@ -514,7 +514,7 @@ function App() {
           mình.”
         </blockquote>
         <p>
-          Hân hạnh được đón tiếp bạn từ 11g, đãi tiệc lúc 11h30 ngày 16/09/2026
+          Hân hạnh được đón tiếp bạn từ 11h, đãi tiệc lúc 11h30 ngày 16/09/2026
           tại 101 Đ. Lý Chiêu Hoàng, Phường 10, Bình Phú, Hồ Chí Minh.
         </p>
       </section>
