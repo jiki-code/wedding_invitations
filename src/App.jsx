@@ -441,15 +441,15 @@ function App() {
 
         <div className="gallery-story" data-reveal style={{ '--reveal-delay': '70ms' }}>
           <p>
-            Mọi thứ bắt đầu lúc cả 2 còn là học sinh cấp 3, chú rễ đã say đắm cô
+            Mọi thứ bắt đầu lúc cả 2 còn là học sinh cấp 3 còn thời cắp sách đến trường, chúng tôi học cùng trường với nhau, chú rể đã say nắng cô
             dâu từ khoảng thời gian ấy, sau hơn 12 năm cả 2 vô tình tìm thấy nhau
-            và 1 lần nữa, đó là nơi tình yêu bắt đầu. Khi cả 2 đã trưởng thành, mọi thứ đã thay đổi nhiều kể từ lần rung động trước đó, 2 con người trưởng thành hơn đến với nhau. 
+            và 1 lần nữa nơi, đó là nơi tình yêu bắt đầu. Khi cả 2 đã trưởng thành, mọi thứ đã thay đổi nhiều kể từ lần rung động trước đó, thì 2 con người ấy giờ đã trưởng thành đến với nhau, chứ không còn là mối tình thời học trò. 
           </p>
           <p>
             Hành trình gần 2 năm qua là những tháng ngày cùng nhau trưởng thành,
             chia sẻ niềm vui và vượt qua thử thách. Tình yêu của chúng tôi không
             hào nhoáng, mà lặng lẽ, sâu sắc và bền chặt như những trang sách cũ kỹ
-            nhưng vô giá.
+            nhưng vô giá. 
           </p>
           <p className="gallery-story-signature">
             “Cảm ơn vì đã luôn ở bên nhau.” — Anh Kiệt & Trần Hiền
