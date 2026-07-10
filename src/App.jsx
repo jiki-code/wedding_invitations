@@ -436,14 +436,14 @@ function App() {
       <section className="gallery section" data-reveal style={{ '--reveal-delay': '50ms' }}>
         <div className="section-heading">
           <p className="eyebrow">Khoảnh khắc</p>
-          <h2>Công chuyện nên duyên của chúng tôi</h2>
+          <h2>Câu chuyện nên duyên của chúng tôi</h2>
         </div>
 
         <div className="gallery-story" data-reveal style={{ '--reveal-delay': '70ms' }}>
           <p>
             Mọi thứ bắt đầu lúc cả 2 còn là học sinh cấp 3, chú rễ đã say đắm cô
             dâu từ khoảng thời gian ấy, sau hơn 12 năm cả 2 vô tình tìm thấy nhau
-            và 1 lần nữa, đó là nơi tình yêu bắt đầu.
+            và 1 lần nữa, đó là nơi tình yêu bắt đầu. Khi cả 2 đã trưởng thành, mọi thứ đã thay đổi nhiều kể từ lần run động trước đó, 2 con người trưởng thành hơn đến với nhau. 
           </p>
           <p>
             Hành trình gần 2 năm qua là những tháng ngày cùng nhau trưởng thành,
