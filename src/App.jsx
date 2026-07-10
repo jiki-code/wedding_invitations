@@ -202,6 +202,8 @@ function App() {
                   <img
                     src={optimizedImage('cover-center.jpeg')}
                     alt="Khoảnh khắc cô dâu chú rể dưới lớp voan"
+                    width="600"
+                    height="900"
                     loading="eager"
                     decoding="async"
                     fetchPriority="high"
@@ -218,8 +220,11 @@ function App() {
                     <img
                       src={optimizedImage('cover-left.jpeg')}
                       alt="Cô dâu chú rể trong khu vườn hoa"
+                      width="600"
+                      height="900"
                       loading="eager"
                       decoding="async"
+                      fetchPriority="low"
                     />
                   </div>
                   <p className="eyebrow">Save the Date</p>
@@ -234,8 +239,11 @@ function App() {
                     <img
                       src={optimizedImage('cover-right.jpeg')}
                       alt="Tà váy cưới trải dài trong khu vườn"
+                      width="600"
+                      height="900"
                       loading="eager"
                       decoding="async"
+                      fetchPriority="low"
                     />
                   </div>
                   <p className="eyebrow">Wedding Day</p>
@@ -351,9 +359,11 @@ function App() {
             <img
               src={optimizedImage('A5_08702.jpg')}
               alt="Ảnh cưới của Trần Hiền và Anh Kiệt"
-              loading="eager"
+              width="1067"
+              height="1600"
+              loading="lazy"
               decoding="async"
-              fetchPriority="high"
+              fetchPriority="low"
             />
           </div>
           <div className="floating-card">
@@ -464,7 +474,15 @@ function App() {
               data-reveal
               style={{ '--reveal-delay': `${index * 120}ms` }}
             >
-              <img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" />
+              <img
+                src={photo.src}
+                alt={photo.alt}
+                width="1066"
+                height="1600"
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low"
+              />
               <figcaption>{photo.caption}</figcaption>
             </figure>
           ))}

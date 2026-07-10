@@ -528,6 +528,16 @@ a {
   isolation: isolate;
 }
 
+.details-grid,
+.event-info,
+.wedding-schedule,
+.gallery,
+.countdown,
+.closing {
+  content-visibility: auto;
+  contain-intrinsic-size: 700px;
+}
+
 [data-reveal] {
   opacity: 0;
   transform: translateY(34px) scale(0.98);
