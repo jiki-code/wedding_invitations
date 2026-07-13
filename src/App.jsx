@@ -42,7 +42,7 @@ const detailCards = [
   },
   {
     label: 'Giờ đãi tiệc',
-    value: '11h30',
+    value: '11h50',
     note: 'Đón khách 11h',
   },
   {
@@ -98,11 +98,11 @@ const weddingSchedule = [
     title: 'Hôn Lễ Tại Tư Gia',
     time: '9h ngày 16/09/2026',
     place: 'Tại tư gia',
-    address: '45B/2 Xã Bình Chánh, Thành phố Hồ Chí Minh',
+    address: '45B/2 ấp 34 Xã Bình Chánh, Thành phố Hồ Chí Minh',
   },
   {
     title: 'Tiệc Cưới',
-    time: 'Đãi tiệc lúc 11h30 ngày 16/09/2026',
+    time: 'Đãi tiệc lúc 11h50 ngày 16/09/2026',
     note: 'Đón khách 11h',
     place: 'Nhà hàng Diamond Place',
     address: '101 Đ. Lý Chiêu Hoàng, Bình Phú, Hồ Chí Minh',
@@ -211,7 +211,7 @@ function App() {
                 </div>
                 <p className="eyebrow">Thiệp cưới online</p>
                 <h2>Anh Kiệt & Trần Hiền</h2>
-                <span>16/09/2026 • Đón khách 11h • Đãi tiệc 11h30</span>
+                <span>16/09/2026 • Đón khách 11h • Đãi tiệc 11h50</span>
               </div>
 
               <div className="invitation-panel invitation-panel-left">
@@ -327,7 +327,7 @@ function App() {
             </div>
             <div>
               <span>Giờ đãi tiệc</span>
-              <strong>11h30</strong>
+              <strong>11h50</strong>
             </div>
             <div>
               <span>Âm lịch</span>
@@ -397,7 +397,7 @@ function App() {
         <div className="event-info-grid">
           <article className="event-panel">
             <p>Thời gian</p>
-            <h3>Đãi tiệc lúc 11h30 ngày 16/09/2026</h3>
+            <h3>Đãi tiệc lúc 11h50 ngày 16/09/2026</h3>
             <span>Đón khách 11h • Nhằm 06/08 Âm lịch</span>
           </article>
 
@@ -532,7 +532,7 @@ function App() {
           mình.”
         </blockquote>
         <p>
-          Hân hạnh được đón tiếp bạn từ 11h, đãi tiệc lúc 11h30 ngày 16/09/2026
+          Hân hạnh được đón tiếp bạn từ 11h, đãi tiệc lúc 11h50 ngày 16/09/2026
           tại 101 Đ. Lý Chiêu Hoàng, Phường 10, Bình Phú, Hồ Chí Minh.
         </p>
       </section>
