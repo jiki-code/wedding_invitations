@@ -248,7 +248,7 @@ function App() {
                   </div>
                   <p className="eyebrow">Wedding Day</p>
                   <h2>Trần Hiền</h2>
-                  <span>16/09/2026 • 06/08 Âm lịch</span>
+                  <span>16/09/2026 • 06 tháng 8 Âm lịch</span>
                 </div>
               </div>
             </div>
@@ -331,7 +331,7 @@ function App() {
             </div>
             <div>
               <span>Âm lịch</span>
-              <strong>06/08</strong>
+              <strong>06 tháng 8</strong>
             </div>
             <div>
               <span>Địa chỉ</span>
@@ -398,7 +398,7 @@ function App() {
           <article className="event-panel">
             <p>Thời gian</p>
             <h3>Đãi tiệc lúc 11h50 ngày 16/09/2026</h3>
-            <span>Đón khách 11h • Nhằm 06/08 Âm lịch</span>
+            <span>Đón khách 11h • Nhằm 06 tháng 8 Âm lịch</span>
           </article>
 
           <article className="event-panel">

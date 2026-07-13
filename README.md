@@ -4,7 +4,7 @@ Project này là một landing page thiệp cưới viết bằng React + Vite c
 
 - Trần Hiền - Anh Kiệt
 - Ngày cưới: 16/09/2026
-- Âm lịch: 06/08
+- Âm lịch: 06 tháng 8
 
 ## Chạy local
 
