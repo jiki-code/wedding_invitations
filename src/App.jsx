@@ -47,7 +47,7 @@ const detailCards = [
   },
   {
     label: 'Địa điểm',
-    value: 'Diamond Place',
+    value: 'Diamond Palace',
     note: '101 Đ. Lý Chiêu Hoàng, Bình Phú, Hồ Chí Minh',
   },
 ];
@@ -104,7 +104,7 @@ const weddingSchedule = [
     title: 'Tiệc Cưới',
     time: 'Đãi tiệc lúc 11h50 ngày 16/09/2026',
     note: 'Đón khách 11h',
-    place: 'Nhà hàng Diamond Place',
+    place: 'Nhà hàng Diamond Palace',
     address: '101 Đ. Lý Chiêu Hoàng, Bình Phú, Hồ Chí Minh',
   },
 ];
@@ -403,7 +403,7 @@ function App() {
 
           <article className="event-panel">
             <p>Địa chỉ</p>
-            <h3>Diamond Place 101 Đ. Lý Chiêu Hoàng</h3>
+            <h3>Diamond Palace 101 Đ. Lý Chiêu Hoàng</h3>
             <span>Phường 10, Bình Phú, Hồ Chí Minh</span>
           </article>
         </div>
