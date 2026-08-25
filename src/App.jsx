@@ -42,7 +42,7 @@ const detailCards = [
   },
   {
     label: 'Giờ đãi tiệc',
-    value: '11h50',
+    value: '12h',
     note: 'Đón khách 11h',
   },
   {
@@ -102,7 +102,7 @@ const weddingSchedule = [
   },
   {
     title: 'Tiệc Cưới',
-    time: 'Đãi tiệc lúc 11h50 ngày 16/09/2026',
+    time: 'Đãi tiệc lúc 12h ngày 16/09/2026',
     note: 'Đón khách 11h',
     place: 'Nhà hàng Diamond Palace',
     address: '101 Đ. Lý Chiêu Hoàng, Bình Phú, Hồ Chí Minh',
@@ -211,7 +211,7 @@ function App() {
                 </div>
                 <p className="eyebrow">Thiệp cưới online</p>
                 <h2>Anh Kiệt & Trần Hiền</h2>
-                <span>16/09/2026 • Đón khách 11h • Đãi tiệc 11h50</span>
+                <span>16/09/2026 • Đón khách 11h • Đãi tiệc 12h</span>
               </div>
 
               <div className="invitation-panel invitation-panel-left">
@@ -327,7 +327,7 @@ function App() {
             </div>
             <div>
               <span>Giờ đãi tiệc</span>
-              <strong>11h50</strong>
+              <strong>12h</strong>
             </div>
             <div>
               <span>Âm lịch</span>
@@ -397,7 +397,7 @@ function App() {
         <div className="event-info-grid">
           <article className="event-panel">
             <p>Thời gian</p>
-            <h3>Đãi tiệc lúc 11h50 ngày 16/09/2026</h3>
+            <h3>Đãi tiệc lúc 12h ngày 16/09/2026</h3>
             <span>Đón khách 11h • Nhằm 06 tháng 8 Âm lịch</span>
           </article>
 
@@ -532,7 +532,7 @@ function App() {
           mình.”
         </blockquote>
         <p>
-          Hân hạnh được đón tiếp bạn từ 11h, đãi tiệc lúc 11h50 ngày 16/09/2026
+          Hân hạnh được đón tiếp bạn từ 11h, đãi tiệc lúc 12h ngày 16/09/2026
           tại 101 Đ. Lý Chiêu Hoàng, Phường 10, Bình Phú, Hồ Chí Minh.
         </p>
       </section>
