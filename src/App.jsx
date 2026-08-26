@@ -673,7 +673,6 @@ function App() {
         >
           <div className="section-heading text-center">
             <p className="eyebrow">Xác nhận tham dự</p>
-            <h2>Form Xác Nhận Tham Gia Buổi Tiệc</h2>
           </div>
 
           <div className="rsvp-container">
