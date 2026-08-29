@@ -64,7 +64,7 @@ const galleryPhotos = [
     caption: 'Ánh nhìn hạnh phúc',
   },
   {
-    src: optimizedImage('A5_09234.jpg'),
+    src: optimizedImage('A5_09442.jpg'),
     alt: 'Cô dâu chú rể giữa cánh hoa rơi',
     caption: 'Khoảnh khắc ngọt ngào',
   },
