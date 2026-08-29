@@ -59,7 +59,7 @@ const galleryPhotos = [
     caption: 'Save the date',
   },
   {
-    src: optimizedImage('A5_08480.jpg'),
+    src: optimizedImage('A5_09328.jpg'),
     alt: 'Cô dâu chú rể nắm tay và ngoái nhìn máy ảnh',
     caption: 'Ánh nhìn hạnh phúc',
   },
